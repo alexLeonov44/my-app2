@@ -1,0 +1,21 @@
+.nav {
+    grid-area: n;
+    background-color:cyan;
+    padding: 20px;
+  }
+
+.nav a{
+ color: black;
+ text-decoration: none;
+  }
+
+.item a:hover {
+  color:white;
+}
+
+.item a.activeLink {
+  color:gold;
+}
+/* a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active - a link the moment it is clicked */
