@@ -8,7 +8,6 @@ const MyPosts = (props) => {
     let postsElement = props.postData.map(p => <Post message={p.message} age={p.age} />)
 
     let addPost = () => {
-        debugger
         props.addPost()
     }
     let onPostChange = (event) => {

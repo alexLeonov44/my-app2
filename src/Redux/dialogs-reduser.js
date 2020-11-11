@@ -18,21 +18,21 @@ let initialState = {
 
 const dialogsReduser = (state = initialState, action) => {
 
-
+    let stateCopy   //способ через глоб переменую
     switch (action.type) {
-        case SEND_MESSAGE:
-            let message = state.newMessageText
-            state.newMessageText = ''
-            state.messagesData.push(
-                { message: message }
-            )
-            return state
+        case SEND_MESSAGE: 
+            stateCopy = { ...state }
+            let message = stateCopy.newMessageText
+            stateCopy.newMessageText = ''
+            stateCopy.messagesData = [ ...state.messagesData ,{message:message}]  // вместо push новый синтаксис
+            // stateCopy.messagesData.push({ message: message })
+
+            return stateCopy
         case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.text
+            stateCopy = { ...state }
+            stateCopy.newMessageText = action.text
 
-
-
-            return state
+            return stateCopy
         default:
             return state
     }

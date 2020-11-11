@@ -20,12 +20,15 @@ const profileReduser = (state = initialState, action) => {
                 message: state.newPostText,
                 age: 2
             }
-            state.newPostText = ''
-            state.postData.push(newPost)
-            return state
+            let stateCopy = {...state}
+            stateCopy.newPostText = ''
+            stateCopy.postData.push(newPost)
+            return stateCopy                 //вернет копию state 
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText
-            return state
+            let stateCopy2 = {...state}
+            stateCopy2.newPostText={...state.newPostText}
+            stateCopy2.newPostText = action.newText
+            return stateCopy2
         default:
             return state
     }
