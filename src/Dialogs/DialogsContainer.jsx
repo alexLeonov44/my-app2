@@ -1,4 +1,3 @@
-import React from 'react';
 import Dialogs from './Dialogs'
 import { updateNewMessageTextCreator, sendMessageCreator } from '../Redux/dialogs-reduser'  
 import { connect } from 'react-redux';
@@ -22,7 +21,7 @@ import { connect } from 'react-redux';
 // }
 
 
-const mapStateToProps =(state)=>{
+ const mapStateToProps =(state)=>{
     return{
         dialogsPage: state.dialogsPage
     }

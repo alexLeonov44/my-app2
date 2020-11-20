@@ -7,7 +7,7 @@ const ProfileInfo = () => {
     return (
         <div className={classes.content}>
             <div className={classes.image}>
-                <img src="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg" alt=''/>
+                <img src="https://hackernoon.com/hn-images/1*HSisLuifMO6KbLfPOKtLow.jpeg" alt=''/>
             </div>
 
             <div>

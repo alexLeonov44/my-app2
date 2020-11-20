@@ -5,8 +5,8 @@ grid-template-areas:
 "h h"
 "n c";
 grid-template-rows: 5 0px 1fr;
-grid-template-columns: 130px 10fr ;
- width: 1200px;
+grid-template-columns: 130px 15fr ;
+ width: 100%;
 }
 
 .app-wrapper-content{
