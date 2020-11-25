@@ -4,9 +4,9 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        { id: 1,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
-        { id: 2,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
-        { id: 3,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
+        // { id: 1,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
+        // { id: 2,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
+        // { id: 3,followed:true, fullName:'alex',status:'handsome',location: {sity:'mogilew',country:'belarus'} },
 
         ]
 
