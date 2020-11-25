@@ -4,19 +4,17 @@ import * as axios from 'axios';
 
 class Users extends React.Component {
 
-    constructor(props) {
-        super(props)
-        if (this.props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-                debugger
-                this.props.setUsers(response.data.items)
-            })
-        }
+    componentDidMount() {
+        alert('componemt did mount')  //запрос делается после монтировки компоненты один раз
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            debugger
+            this.props.setUsers(response.data.items)
+        })
     }
 
     render() {
         return <div className={classes.users}>
-            <button onClick={this.getUser}>get Users</button>
+
             {
                 this.props.users.map(u => <div className={classes.usersItems} key={u.id}>
 
