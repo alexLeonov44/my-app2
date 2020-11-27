@@ -1,9 +1,15 @@
 .users{
- background-color: grey;
-   
+ background-color: grey;  
 }
 .usersItems{
  padding: 10px;
+}
+.selectedPage{
+  font-weight: bold;
+}
+span{
+  margin: 5px;
+  cursor: pointer;
 }
  img{
     width: 50px;
