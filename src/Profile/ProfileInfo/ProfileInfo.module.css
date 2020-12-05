@@ -1,8 +1,15 @@
-
-  .image img {
+  .descriptionBlock{
+    margin-left: 10px;
+  }
+  .HeadImage img {
     width:1370px;
     /* height:700px ; */
-    padding:10px ;
+    margin: 10px;
+  }
+
+  .profilePhoto img {
+    width:300px;
+    margin-left: 10px; 
   }
  
   p{

@@ -25,6 +25,7 @@ const MyPosts = (props) => {
             </div>
             <div className={classes.posts}></div>
             {postsElement}
+            
         </div>
 
     )

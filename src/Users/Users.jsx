@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './Users.module.css';
 
 
@@ -21,7 +22,9 @@ let Users = (props) => {
             props.users.map(u => <div className={classes.usersItems} key={u.id}>
 
                 <div>
+                    <NavLink to = {'/profile/' + u.id}>
                     <img src={u.photos.small || "https://cdn.statically.io/img/www.celebrities-contact.com//wp-content/uploads/2019/07/ava-max-email-phone-contact-581.jpg"} alt='image' />
+                    </NavLink>
                 </div>
 
 
