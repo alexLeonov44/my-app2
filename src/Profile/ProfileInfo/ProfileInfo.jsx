@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
                 <img src="https://hackernoon.com/hn-images/1*HSisLuifMO6KbLfPOKtLow.jpeg" alt='' />
             </div>
             <div className={classes.profilePhoto}>
-                <img src={props.profile.photos.large} alt='' />
+               { <img src={props.profile.photos.large || 'https://cdn.statically.io/img/www.celebrities-contact.com//wp-content/uploads/2019/07/ava-max-email-phone-contact-581.jpg' } alt='' />}
             </div>
 
             <div className={classes.descriptionBlock}>
