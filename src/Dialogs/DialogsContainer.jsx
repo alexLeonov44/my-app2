@@ -1,30 +1,13 @@
 import Dialogs from './Dialogs'
 import { updateNewMessageTextCreator, sendMessageCreator } from '../Redux/dialogs-reduser'  
 import { connect } from 'react-redux';
+import { withAuthRedirect } from '../hoc/withAuthRedirect';
 
-
-
-// const DialogsContainer = (props) => {
-
-//     let dialogsPage = props.state.getState().dialogsPage  //state.dialogsPage
-
-//     let onSendMessageClick = () => {
-//         props.dispatch(sendMessageCreator())
-//     }
-//     let onNewMessageChange = (text) => {
-//         props.dispatch(updateNewMessageTextCreator(text))
-//     }
-//     return (
-//        <Dialogs onNewMessageChange={onNewMessageChange} onSendMessageClick={onSendMessageClick} dialogsPage={dialogsPage} />
-
-//     )
-// }
 
 
  const mapStateToProps =(state)=>{
     return{
         dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth
     }
  }
  
@@ -34,8 +17,9 @@ import { connect } from 'react-redux';
         onNewMessageChange: (text) =>  dispatch(updateNewMessageTextCreator(text)) 
      }
  }
- 
- const DialogsContainer = connect(mapStateToProps,mapDispatchToProps)(Dialogs)  //зашит внутрь consumer и discriber ,локальные перерисовки ,убир rerender
+ let redirectComponent = withAuthRedirect(Dialogs)
+ const DialogsContainer = connect(mapStateToProps,mapDispatchToProps)(redirectComponent)  
+ //зашит внутрь consumer и discriber ,локальные перерисовки ,убир rerender
  
 
 export default DialogsContainer
