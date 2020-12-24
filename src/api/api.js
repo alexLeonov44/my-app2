@@ -22,6 +22,12 @@ export const followAPI =(id)=>{
 export const getProfileAPI =(userId)=>{
     return instance(`profile/` + userId)
 }
+export const getProfileStatusAPI =(userId)=>{
+    return instance(`profile/status/` + userId)
+}
+export const updateStatusAPI =(status)=>{
+    return instance.put(`profile/status/`,{status})
+}
 
 
 

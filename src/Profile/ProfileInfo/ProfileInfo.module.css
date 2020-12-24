@@ -1,17 +1,27 @@
-  .descriptionBlock{
-    margin-left: 10px;
+.content{
+  display: grid;
+  grid-template-areas:
+"p d";
+grid-template-columns: 30% 70% ;
+margin: 10px;
+}
+  
+
+  .profilePhoto  {
+    grid-area: p;
+    
   }
-  .HeadImage img {
-    width:1370px;
-    /* height:700px ; */
-    margin: 10px;
+  .profilePhoto img {
+    width:90%;
+    /* margin-left: 10px;  */
   }
 
-  .profilePhoto img {
-    width:300px;
-    margin-left: 10px; 
-  }
- 
-  p{
+  .ProfileInfo{
+    grid-area: d;
     margin: 10px;
   }
+ p {
+   font-size: 30px;
+   font-weight: bold;
+ }
+  

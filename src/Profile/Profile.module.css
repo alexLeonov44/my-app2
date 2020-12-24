@@ -1,6 +1,12 @@
 .content{
-    
+    display: grid;
     background-color:gray;
+    grid-template-areas:
+"ProfileInfo"
+"myPostsContainer";
+
+
+ width: 100%;
   }
   
   

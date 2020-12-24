@@ -15,7 +15,7 @@ class UsersContainerAPI extends React.Component {
     onPageChanged = (pageNumber)=>{
         this.props.getUsers(pageNumber, this.props.pageSize) 
     }
-
+     
     render() {
         
         return <>
@@ -51,7 +51,7 @@ const mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps,
+export default compose( connect(mapStateToProps,
     {followComplete,unfollowComplete,setUsers,setCurrentPage,
     setToUserCount,toggleIsFetching,toggleIsFollowingProgress,getUsers,unfollow,follow}),
     withAuthRedirect)(UsersContainerAPI)

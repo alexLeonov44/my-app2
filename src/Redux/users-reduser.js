@@ -104,7 +104,6 @@ export const unfollow = (id)=>{
     }
 }
 export const follow = (id)=>{
-    debugger
     return (dispatch)=>{
         dispatch(toggleIsFollowingProgress(true,id))
         followAPI(id).then(response => { if (response.data.resultCode === 0) {dispatch(followComplete(id))}
