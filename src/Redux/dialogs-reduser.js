@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 let initialState = {
     dialogsData: [
@@ -12,7 +11,6 @@ let initialState = {
         { message: 'real fanny petra' },
         { message: 'fuck you vano' },
     ],
-    newMessageText: ''
 
 }
 
@@ -22,15 +20,10 @@ const dialogsReduser = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE: 
             stateCopy = { ...state }
-            let message = stateCopy.newMessageText
-            stateCopy.newMessageText = ''
+            let message = action.dialogData.message
+            action.dialogData.message = ''
             stateCopy.messagesData = [ ...state.messagesData ,{message:message}]  // вместо push новый синтаксис
             // stateCopy.messagesData.push({ message: message })
-
-            return stateCopy
-        case UPDATE_NEW_MESSAGE_TEXT:
-            stateCopy = { ...state }
-            stateCopy.newMessageText = action.text
 
             return stateCopy
         default:
@@ -38,7 +31,6 @@ const dialogsReduser = (state = initialState, action) => {
     }
 }
 
-export let sendMessageCreator = () => ({ type: SEND_MESSAGE })
-export let updateNewMessageTextCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, text: text })
+export let sendMessageCreator = (dialogData) => ({ type: SEND_MESSAGE,dialogData })
 
 export default dialogsReduser

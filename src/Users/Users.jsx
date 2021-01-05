@@ -11,7 +11,16 @@ let Users = (props) => {
         pages.push(i)
     }
 
+    let nextPage = ()=>{
+        props.onPageChanged(props.currentPage +1)  
+    }
+    let prevPage = ()=>{
+        props.onPageChanged(props.currentPage -1)  
+    }
+    
     return <div className={classes.users}>
+              <button onClick={() => prevPage() }>prev</button>
+              <button onClick={() => nextPage() }>next</button>
 
         <div className={classes.span }>{
             pages.map(p => <span className={props.currentPage === p && classes.selectedPage} onClick={() => { props.onPageChanged(p) }} >{p}</span>)

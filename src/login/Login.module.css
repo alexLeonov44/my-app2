@@ -1,0 +1,17 @@
+.loginForm{
+    background-color: grey;
+}
+.loginForm h1 {
+  margin-top: 0px;
+  padding-top: 10px;
+}
+.loginFormError{
+  color:red;
+  border:1px solid red;
+  padding:5px;
+  
+}
+
+
+
+  

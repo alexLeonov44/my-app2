@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followComplete, unfollowComplete, setUsers,setCurrentPage, setToUserCount,toggleIsFetching,toggleIsFollowingProgress,getUsers,unfollow,follow } from '../Redux/users-reduser'
+import { followComplete, unfollowComplete, setUsers,setCurrentPage, setToUserCount,toggleIsFetching,
+         toggleIsFollowingProgress,requiredUsers,unfollow,follow } from '../Redux/users-reduser'
 import Users from './Users';
 import Preloader from '../common/preloader/Preloader'
 import { withAuthRedirect } from '../hoc/withAuthRedirect';
 import { compose } from 'redux';
+import { getUsers,getPageSize,getTotalUsersCount,getCurrentPage,getIsFetching,getFollowingInProgress } from '../Redux/users-selectors';
 
 class UsersContainerAPI extends React.Component {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        this.props.requiredUsers(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChanged = (pageNumber)=>{
-        this.props.getUsers(pageNumber, this.props.pageSize) 
+        this.props.requiredUsers(pageNumber, this.props.pageSize) 
     }
      
     render() {
@@ -41,17 +43,17 @@ class UsersContainerAPI extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching:state.usersPage.isFetching,
-        followingInProgress:state.usersPage.followingInProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching:getIsFetching(state),
+        followingInProgress:getFollowingInProgress(state)
     }
 }
 
 
 export default compose( connect(mapStateToProps,
     {followComplete,unfollowComplete,setUsers,setCurrentPage,
-    setToUserCount,toggleIsFetching,toggleIsFollowingProgress,getUsers,unfollow,follow}),
+    setToUserCount,toggleIsFetching,toggleIsFollowingProgress,requiredUsers,unfollow,follow}),
     withAuthRedirect)(UsersContainerAPI)
