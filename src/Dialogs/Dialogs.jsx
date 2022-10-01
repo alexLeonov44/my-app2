@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import classes from './Dialogs.module.css';
 import DialogsItems from './DialogsItem/DialogsItem'
 import Message from './Message/Message'
@@ -36,11 +35,10 @@ const Dialogs = (props) => {
         props.onSendMessageClick(dialogData)
     }
 
-    let dialogsElement = props.dialogsPage.dialogsData.map(d => <DialogsItems name={d.name} id={d.id} />)  //метод мап функия прог по циклу 
-    let messagesElement = props.dialogsPage.messagesData.map(m => <Message message={m.message} />)
+    let dialogsElement = props.dialogsPage.dialogsData.map(d => <DialogsItems key={d.id} name={d.name} id={d.id} />)  //метод мап функия прог по циклу 
+    let messagesElement = props.dialogsPage.messagesData.map(m => <Message key={m.id} message={m.message} />)
 
     
-     //if(!props.isAuth)return <Redirect to={'/login'}/> 
      
     return (
         <div className={classes.dialogs}>

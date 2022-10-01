@@ -20,8 +20,20 @@ margin: 10px;
     grid-area: d;
     margin: 10px;
   }
- p {
-   font-size: 30px;
-   font-weight: bold;
+ /* p {
+   
+   ;
+ } */
+
+ .descriptionBlockName{
+  font-weight: bold;
+  font-size: 30px;
+  margin: 5px;
+ }
+
+ .profileDataFormError{
+ margin: 5px;
+ padding: 2px;
+ border: 2px solid red;
  }
   

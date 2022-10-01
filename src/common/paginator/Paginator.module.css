@@ -1,0 +1,11 @@
+.selectedPage{
+    font-weight: bold;
+  }
+
+.span span{
+    margin: 5px;
+    cursor: pointer;
+  }
+.button{
+    margin: 5px;
+  }

@@ -9,6 +9,15 @@ const instance = axios.create({
 export const getAuthAPI =()=>{
     return instance(`auth/me`)
 }
+export const loginAPI =(email,password,rememberMe,captcha)=>{
+    return instance.post(`auth/login`,{email,password,rememberMe,captcha})
+}
+export const logoutAPI =()=>{
+    return instance.delete(`auth/login`)
+}
+export const getCapchaAPI =()=>{
+    return instance.get('security/get-captcha-url')
+}
 
 
 export const getUsersAPI =(currentPage,pageSize)=>{
@@ -19,6 +28,7 @@ export const unfollowAPI =(id)=>{
 }
 export const followAPI =(id)=>{
     return instance.post(`follow/${id}`,{})
+
 }
 export const getProfileAPI =(userId)=>{
     return instance(`profile/` + userId)
@@ -27,14 +37,23 @@ export const getProfileStatusAPI =(userId)=>{
     return instance(`profile/status/` + userId)
 }
 export const updateStatusAPI =(status)=>{
+    console.log(status)
     return instance.put(`profile/status/`,{status})
 }
-export const loginAPI =(email,password,rememberMe)=>{
-    return instance.post(`auth/login`,{email,password,rememberMe})
+export const saveProfileAPI =(profile)=>{
+    console.log(profile)
+    return instance.put(`profile`,profile)
 }
-export const logoutAPI =()=>{
-    return instance.delete(`auth/login`)
+export const savePhotoAPI =(photoFile)=>{
+    const formData = new FormData()
+    formData.append('image',photoFile)
+    return instance.put(`profile/photo/`,formData,{
+        headers: {
+            'Content-Type': `multipart/form-data;`,
+          }})
 }
+
+
 
 
 

@@ -22,13 +22,13 @@ const LoginForm = (props) => {   // in props resive - handleSubmit
                 <div>
                     <Field type="checkbox" name={'rememberMe'} component={'input'} /> remember me
                 </div>
-                {props.error ?
-                    <div className={classes.loginFormError}>
-                        {props.error}
-                    </div>
-                    : ''}                <div>
+                {props.error ? <div className={classes.loginFormError}> {props.error} </div>  : ''} 
+                    
+                {props.capcha ? <div> {<img src={props.capcha  } alt={''}/>   }   </div>  : ''}
+                {props.capcha &&  <Field type="text" name={'capcha'} component={Input} />}
+               
                     <button>login</button> {/* в форме auto submit */}
-                </div>
+                
             </form>
         </div>
     )
@@ -44,7 +44,7 @@ const Login = (props) => {
 
     const onSubmit = (formData) => {  //придут сюда все значения из форм !! через submit!
         console.log(formData) // отобразим все данные!
-        props.login(formData.email, formData.password, formData.rememberMe, true)
+        props.login(formData.email, formData.password, formData.rememberMe, formData.capcha)
 
     }
     if (props.isAuth) {
@@ -53,7 +53,7 @@ const Login = (props) => {
     return (
         <div className={classes.loginForm}>
             <h1>LOGIN</h1>
-            <LoginReduxForm onSubmit={onSubmit} /> {/* передача родителю данных из form! */}
+            <LoginReduxForm onSubmit={onSubmit} capcha={props.capcha} /> {/* передача родителю данных из form! */}
         </div>
 
     )
@@ -62,6 +62,7 @@ const Login = (props) => {
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
+        capcha: state.auth.capcha,
     }
 }
 

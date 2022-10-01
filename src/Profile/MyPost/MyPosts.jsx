@@ -35,7 +35,7 @@ const MyPosts = (props) => {
         props.addPost(addPostData)
     }
     
-    let postsElement = props.postData.map(p => <Post message={p.message} age={p.age} />)
+    let postsElement = props.postData.map(p => <Post key={p.id} message={p.message} age={p.age} />)
 
     return (
         <div className={classes.myPosts} >

@@ -7,9 +7,10 @@ let initialState = {
         { id: 3, name: 'Vano' },
     ],
     messagesData: [
-        { message: 'hey from props alex' },
-        { message: 'real fanny petra' },
-        { message: 'fuck you vano' },
+        { id: 1, message: 'hey from props alex' },
+        { id: 2, message: 'real fanny petra' },
+        { id: 3, message: 'fuck you vano' },
+        { id: 3, message: 'hello johny kaddilack' },
     ],
 
 }

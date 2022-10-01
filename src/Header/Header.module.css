@@ -1,14 +1,8 @@
-
 .header {
     grid-area: h;
     background-color:rgb(93, 94, 146) ;
   } 
   
-.header img {
-   width: 50px;
-   
-  }
-
  .loginBlock{
   float: right;
   margin: 5px;
@@ -17,4 +11,25 @@
 
   .loginBlock a{
     background-color:cyan;
+  }
+
+
+    /* LOGO */
+
+  .logo {
+    width: 50px;
+      
+    }
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }

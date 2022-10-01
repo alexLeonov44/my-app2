@@ -18,7 +18,7 @@ const HeaderWithHook =(props)=> {
         return (
             <header className={classes.header}>
 
-                <img src={logo} alt='' />
+                <img src={logo} className={classes.logo} alt='' />
 
                 <div className={classes.loginBlock}>{
                     

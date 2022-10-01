@@ -14,7 +14,7 @@ import { BrowserRouter } from 'react-router-dom';
     <React.StrictMode>
       <BrowserRouter>
       <Provider store={store}>
-      <App  dispatch={store.dispatch.bind(store)}  />
+      <App />
       </Provider>
       </BrowserRouter>
     </React.StrictMode>,
